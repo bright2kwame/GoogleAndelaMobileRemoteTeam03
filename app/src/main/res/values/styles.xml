@@ -1,10 +1,380 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:textColorPrimary">@color/colorLightDark</item>
+        <item name="android:textColor">@color/colorLightDark</item>
+        <item name="android:textColorSecondary">@color/colorLightDark</item>
+        <item name="android:textColorTertiary">@color/colorLightDark</item>
+        <item name="colorControlNormal">@color/colorLightDark</item>
+        <item name="actionMenuTextColor">@color/colorLightDark</item>
+        <item name="colorControlActivated">@color/colorLightDarkHint</item>
+        <item name="colorControlHighlight">@color/colorLightDarkHint</item>
+        <item name="android:panelColorBackground">@color/colorPrimary</item>
+        <item name="android:panelBackground">@color/colorPrimary</item>
+        <item name="android:panelColorForeground">@color/colorPrimary</item>
+        <item name="android:itemTextAppearance">@style/MenuTextAppearance</item>
+        <item name="android:textColorHint">@color/colorLightDarkHint</item>
+        <item name="android:fontFamily">@font/roboto_thin</item>
+
+        <item name="materialButtonStyle">@style/MaterialTextButtonStyle</item>
+        <item name="textInputStyle">@style/MaterialTextBoxStyleOutline</item>
+        <item name="materialCardViewStyle">@style/MaterialCardViewStyle</item>
+        <item name="materialButtonOutlinedStyle">@style/MaterialTextButtonOutlineStyle</item>
+        <item name="android:dialogTheme">@style/AppDialogTheme</item>
+        <item name="alertDialogTheme">@style/AppDialogTheme</item>
+        <item name="alertDialogStyle">@style/AppAlertDialog</item>
+
+    </style>
+
+    <style name="MenuTextAppearance" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
+        <item name="android:textColor">@color/colorLightDark</item>
+        <item name="fontFamily">@font/roboto_thin</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="MainTab" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabIndicatorColor">@color/colorPrimary</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="tabBackground">@color/colorWhite</item>
+        <item name="tabTextAppearance">@style/TabText</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="tabSelectedTextColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="TabText" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="ButtonText" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="FullScreen" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="InvisibleFocusHolder">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:inputType">none</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="TopToastTextTheme" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="TopToastTitleTheme" parent="@android:style/TextAppearance.Large">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+
+    <!-- Define your custom dialog theme here extending from base -->
+    <style name="AppDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Define color properties as desired -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:textColorHighlight">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorLightDark</item>
+        <!-- Define window properties as desired -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowBackground">@color/colorWhite</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="AppAlertDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+
+    <style name="AppTextAppearance.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!--    The text input style in the app -->
+    <style name="ErrorText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorRed</item>
+    </style>
+
+    <style name="HintText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorLightDarkHint</item>
+    </style>
+
+    <style name="MainTextAppearance" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorLightDark</item>
+    </style>
+
+    <style name="MaterialTextBoxStyleBoxLine" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:bottomLeftRadius">0dp</item>
+        <item name="android:bottomRightRadius">0dp</item>
+        <item name="android:topLeftRadius">0dp</item>
+        <item name="android:topRightRadius">0dp</item>
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusTopEnd">0dp</item>
+        <item name="boxCornerRadiusTopStart">0dp</item>
+        <item name="boxCollapsedPaddingTop">0dp</item>
+        <item name="boxStrokeWidth">0.5dp</item>
+        <item name="boxStrokeColor">@color/colorLightDark</item>
+        <item name="boxStrokeWidthFocused">0.5dp</item>
+        <item name="boxBackgroundColor">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorLightDark</item>
+        <item name="hintTextColor">@color/colorLightDarkHint</item>
+        <item name="hintTextAppearance">@style/HintText</item>
+        <item name="android:textAppearance">@style/HintText</item>
+        <item name="errorTextAppearance">@style/ErrorText</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="colorControlNormal">@color/colorLightDark</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="endIconTint">@color/colorLightDark</item>
+        <item name="startIconTint">@color/colorLightDark</item>
+    </style>
+
+    <style name="MaterialTextBoxStyleOutline" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:bottomLeftRadius">0dp</item>
+        <item name="android:bottomRightRadius">0dp</item>
+        <item name="android:topLeftRadius">0dp</item>
+        <item name="android:topRightRadius">0dp</item>
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusTopEnd">0dp</item>
+        <item name="boxCornerRadiusTopStart">0dp</item>
+        <item name="boxCollapsedPaddingTop">0dp</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeColor">@color/colorLightDark</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="boxBackgroundColor">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorLightDark</item>
+        <item name="hintTextColor">@color/colorLightDarkHint</item>
+        <item name="hintTextAppearance">@style/HintText</item>
+        <item name="android:textAppearance">@style/HintText</item>
+        <item name="errorTextAppearance">@style/ErrorText</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="colorControlNormal">@color/colorLightDark</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="endIconTint">@color/colorLightDark</item>
+    </style>
+    <!--   end of the input style here -->
+
+    <!--    the style for the spinner outlined-->
+    <style name="MaterialTextSpinnerStyleOutline" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:bottomLeftRadius">0dp</item>
+        <item name="android:bottomRightRadius">0dp</item>
+        <item name="android:topLeftRadius">0dp</item>
+        <item name="android:topRightRadius">0dp</item>
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusTopEnd">0dp</item>
+        <item name="boxCornerRadiusTopStart">0dp</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="boxStrokeColor">@color/colorLightDarkHint</item>
+        <item name="hintTextColor">@color/colorLightDarkHint</item>
+        <item name="boxBackgroundColor">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorLightDark</item>
+        <item name="hintTextAppearance">@style/HintText</item>
+        <item name="errorTextAppearance">@style/ErrorText</item>
+        <item name="android:textColor">@color/colorLightDark</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="colorControlActivated">@color/colorLightDark</item>
+        <item name="colorControlHighlight">@color/colorLightDark</item>
+    </style>
+
+    <!-- style for material button non-outlines-->
+    <style name="MaterialTextButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:bottomLeftRadius">0dp</item>
+        <item name="android:bottomRightRadius">0dp</item>
+        <item name="android:topLeftRadius">0dp</item>
+        <item name="android:topRightRadius">0dp</item>
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusTopEnd">0dp</item>
+        <item name="cornerRadius">0dp</item>
+        <item name="backgroundTint">@color/primary_button_states</item>
+        <item name="android:textColor">@color/primary_color_states</item>
+    </style>
+
+    <!-- style for material button non-outlines-->
+    <style name="MaterialTextButtonRoundedStyle" parent="MaterialTextButtonStyle">
+        <item name="android:bottomLeftRadius">22dp</item>
+        <item name="android:bottomRightRadius">22dp</item>
+        <item name="android:topLeftRadius">22dp</item>
+        <item name="android:topRightRadius">22dp</item>
+        <item name="boxCornerRadiusBottomEnd">22dp</item>
+        <item name="boxCornerRadiusBottomStart">22dp</item>
+        <item name="boxCornerRadiusTopEnd">22dp</item>
+        <item name="cornerRadius">22dp</item>
+    </style>
+
+    <!-- style for material button non-outlines-->
+    <style name="MaterialTextButtonSmallRoundedStyle" parent="MaterialTextButtonStyle">
+        <item name="android:bottomLeftRadius">@dimen/button_radius</item>
+        <item name="android:bottomRightRadius">@dimen/button_radius</item>
+        <item name="android:topLeftRadius">@dimen/button_radius</item>
+        <item name="android:topRightRadius">@dimen/button_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/button_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/button_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/button_radius</item>
+        <item name="cornerRadius">@dimen/button_radius</item>
+    </style>
+
+    <!--  style for the material button outlined-->
+    <style name="MaterialTextButtonOutlineStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="strokeWidth">0.5dp</item>
+        <item name="strokeColor">@color/primary_outline_button_states</item>
+        <item name="cornerRadius">@dimen/button_radius</item>
+        <item name="android:textColor">@color/primary_outline_button_states</item>
+    </style>
+
+    <!--    the card properties and style-->
+    <style name="MaterialCardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardCornerRadius">@dimen/card_radius</item>
+        <item name="cardBackgroundColor">@color/colorWhite</item>
+        <item name="rippleColor">@color/colorPrimary</item>
+        <item name="cardMaxElevation">@dimen/card_elevation</item>
+        <item name="cardPreventCornerOverlap">true</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="contentPadding">0dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginLeft">@dimen/negative_item_margin</item>
+        <item name="android:layout_marginRight">@dimen/negative_item_margin</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <!--    the card properties and style-->
+    <style name="BaseCardViewStyle" parent="MaterialCardViewStyle">
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardCornerRadius">@dimen/card_radius</item>
+        <item name="cardBackgroundColor">@color/colorWhite</item>
+        <item name="cardMaxElevation">@dimen/card_elevation</item>
+        <item name="cardPreventCornerOverlap">true</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="contentPadding">0dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginLeft">@dimen/negative_item_margin</item>
+        <item name="android:layout_marginRight">@dimen/negative_item_margin</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <!--    the card properties and style-->
+    <style name="BaseCardViewTopStyle" parent="@style/BaseCardViewStyle">
+        <item name="cardCornerRadius">22dp</item>
+    </style>
+
+    <!--    borderless button style-->
+    <style name="MaterialBorderlessButtonStyle" parent="MaterialTextButtonOutlineStyle">
+        <item name="android:colorBackground">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="MaterialIconButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="strokeWidth">0.5dp</item>
+        <item name="strokeColor">?attr/colorPrimary</item>
+        <item name="cornerRadius">2dp</item>
+        <item name="android:textColor">@color/primary_outline_button_states</item>
+        <item name="shapeAppearance">?attr/shapeAppearanceSmallComponent</item>
+        <item name="elevation">0dp</item>
+        <item name="rippleColor">?attr/colorPrimary</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <!--    the group button style-->
+    <style name="GroupOutlineButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="cornerSize">2dp</item>
+        <item name="cornerRadius">0dp</item>
+        <item name="strokeColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="strokeWidth">0.5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+
+    <!--    the appearance of the chip text-->
+    <style name="ChipTextAppearance" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/roboto_thin</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="ChipTextAppearanceSmall" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/roboto_thin</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
 </resources>
