@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="negative_item_margin">-2dp</dimen>
+    <dimen name="card_elevation">1dp</dimen>
+    <dimen name="card_radius">4dp</dimen>
+    <dimen name="button_radius">4dp</dimen>
+</resources>
